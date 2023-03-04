@@ -204,7 +204,7 @@ form {
 /* Modified code example from https://dev.to/adrianbdesigns/let-s-create-a-floating-label-input-with-html-and-css-only-4mo8 */
 .floating {
     margin: auto auto 2rem auto;
-    background-color: #ffffff; 
+    background-color: #0d9263; 
     transition: background-color 0.2s ease;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -214,7 +214,7 @@ form {
     padding: 1.8rem 1rem 0.6rem;
     font-size: 1rem;
     border: 0;
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
+    border-bottom: 0.1rem solid rgba(13, 146, 99, .62);
     transition: border-color 0.2s ease;
     caret-color: var(--sectHeadColor);
     width: 20em;
@@ -224,7 +224,7 @@ form {
     background-color: #f0eeee;
 }
 .floating:hover .floating_input {
-    border-color: rgba(0, 0, 0, 0.62);
+    border-color: rgba(13, 146, 99, 1);
 }
 .floating_input::placeholder {
     color: rgba(0, 0, 0, 0);
