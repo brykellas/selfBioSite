@@ -14,17 +14,18 @@
     --light green: #4aba91;
     --gold: #d4ce46;
     */
-    --hFColor: #0d9263;
-    --bgColor: #0e5135;
-    --containerColor: #4aba91;
-    --sectHeadColor: #494b4b;
-    --sectBGColor: #d4ce46;
+    --hFColor: #0e5135;
+    --bgColor: #494b4b;
+    --containerColor: #494b4b;
+    --sectHeadColor: #d4ce46;
+    --sectBGColor: #0d9263;
 
     --boxShadow: rgba(0,0,0,0.2);
     --inputBorder: rgba(0, 0, 0, 0.8);
 
     --textHead: #fff;
-    --textCard: #000;
+    --textCard: #fff;
+    --textSectHead: #000;
 
 }
 
@@ -45,8 +46,10 @@ header {
     top: 0%;
     width: 100%;
 }
+#container>figure {
+    margin-bottom: 53px;
+}
 .head-img {
-    padding-top: 1px;
     margin: 0 auto;
 }
 #container {
@@ -54,25 +57,28 @@ header {
     margin: 0 auto;
     max-width: 1000px;
     overflow: auto;
-    padding-top: 1px; /* Fix Margin Collapse with .page-header */
     width: 75%;
     min-width: fit-content;
 }
 .section-header {
     background-color: var(--sectHeadColor);
     box-shadow: 0 4px 8px 0 var(--boxShadow);
-    color: white;
+    color: var(--textSectHead);
     text-align: center;
     width: 100%;
     display: inline-block;
+    border-bottom-left-radius: 75%;
+    border-top-right-radius: 75%;
 }
 #contact-header {
     background-color: var(--sectHeadColor);
     box-shadow: 0 4px 8px 0 var(--boxShadow);
-    color: white;
+    color: var(--textSectHead);
     text-align: center;
     width: 100%;
     display: inline-block;
+    border-bottom-left-radius: 75%;
+    border-top-right-radius: 75%;
 }
 h1, h2 {
     font-weight: 600;
@@ -97,8 +103,9 @@ p {
     margin: 10px auto 50px auto;
 }
 .left, .middle, .right {
+    top: 0;
     max-width: 300px;
-    margin: auto;
+    margin: 0 auto auto auto;
     width: 100%;
 }
 .left {
@@ -110,15 +117,41 @@ p {
 .right {
     grid-column: 3;
 }
+.card>div {
+    padding-top: 1px;
+    background-size: cover;
+    margin-bottom: 0.3em;
+}
+.card>div h3 {
+    background-color: rgba(13, 146, 99, .5);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1px;
+    border-radius: 20px;
+}
+#video-games-top {
+    background-image: url("./images/games.PNG");
+    background-position: center;
+    height: 10em;
+} 
+#doggos-top {
+    background-image: url("./images/doggos.jpg");
+    height: 10em;
+} 
+#cooking-top {
+    background-image: url("./images/Cooking.jpg");
+    height: 10em;
+} 
 .card {
     background-color: var(--sectBGColor);
     box-shadow: 0 4px 8px 0 var(--boxShadow);
-    height: 90%;
-    margin: 20px 16px;
+    height: 100%;
+    margin: 20px auto 16px auto;
     padding: 0;
     padding-top: 1px;
     text-align: left;
-    width: 90%;
+    width: 100%;
 }
 .card:hover {
     box-shadow: 0 8px 16px 0 var(--boxShadow);
@@ -130,7 +163,8 @@ p {
     width: 100%;
 }
 .card-body {
-    height: 12.5em;
+    background-image: none;
+    height: fit-content;
     padding: 8px
 }
 .card-body p {
@@ -144,6 +178,7 @@ img {
 .card p {
     color: var(--textCard);
     font-weight: 500;
+    margin-bottom: 0.5em;
 }
 
 #contact {
