@@ -131,16 +131,16 @@ p {
     border-radius: 20px;
 }
 #video-games-top {
-    background-image: url("./images/games.PNG");
+    background-image: url("images/games.PNG");
     background-position: center;
     height: 10em;
 } 
 #doggos-top {
-    background-image: url("./images/doggos.jpg");
+    background-image: url("images/doggos.jpg");
     height: 10em;
 } 
 #cooking-top {
-    background-image: url("./images/Cooking.jpg");
+    background-image: url("images/Cooking.jpg");
     height: 10em;
 } 
 .card {
