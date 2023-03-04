@@ -6,15 +6,37 @@
  */
 
 /* Desktop */
+:root {
+    /* Palette
+    --dark green: #0e5135;
+    --med green: #0d9263;
+    --dark grey: #494b4b;
+    --light green: #4aba91;
+    --gold: #d4ce46;
+    */
+    --hFColor: #0d9263;
+    --bgColor: #0e5135;
+    --containerColor: #4aba91;
+    --sectHeadColor: #494b4b;
+    --sectBGColor: #d4ce46;
+
+    --boxShadow: rgba(0,0,0,0.2);
+    --inputBorder: rgba(0, 0, 0, 0.8);
+
+    --textHead: #fff;
+    --textCard: #000;
+
+}
+
 body{
-    background-color: #69BE28;
+    background-color: var(--bgColor);
     font-family: "Hind Madurai",Verdana,sans-serif;
     margin: 0;
     padding-bottom: 2.5em;
 } 
 header {
-    background-color: #002244;
-    color: white;
+    background-color: var(--hFColor);
+    color: var(--textHead);
     height: fit-content;
     line-height: 70px;
     margin: 0;
@@ -28,7 +50,7 @@ header {
     margin: 0 auto;
 }
 #container {
-    background-color: #A5ACAF;
+    background-color: var(--containerColor);
     margin: 0 auto;
     max-width: 1000px;
     overflow: auto;
@@ -37,16 +59,16 @@ header {
     min-width: fit-content;
 }
 .section-header {
-    background-color: grey;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: var(--sectHeadColor);
+    box-shadow: 0 4px 8px 0 var(--boxShadow);
     color: white;
     text-align: center;
     width: 100%;
     display: inline-block;
 }
 #contact-header {
-    background-color: grey;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: var(--sectHeadColor);
+    box-shadow: 0 4px 8px 0 var(--boxShadow);
     color: white;
     text-align: center;
     width: 100%;
@@ -60,46 +82,97 @@ h1 {
 }
 h3 {
     text-align: center;
-    font-weight: 500;
-    color: white;
+    font-weight: 600;
+    color: var(--textCard);
     width: 100%;
 }
 p {
-    color: white;
+    color: var(--textHead);
+    font-weight: 500;
 }
 .section {
     display: grid;
     height: fit-content;
-    padding-top: 1px;
+    padding-top: 1px; 
     margin: 10px auto 50px auto;
 }
+.left, .middle, .right {
+    max-width: 300px;
+    margin: auto;
+    width: 100%;
+}
+.left {
+    grid-column: 1;
+}
+.middle {
+    grid-column: 2;
+}
+.right {
+    grid-column: 3;
+}
+.card {
+    background-color: var(--sectBGColor);
+    box-shadow: 0 4px 8px 0 var(--boxShadow);
+    height: 90%;
+    margin: 20px 16px;
+    padding: 0;
+    padding-top: 1px;
+    text-align: left;
+    width: 90%;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 var(--boxShadow);
+}
+.card figure {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.card-body {
+    height: 12.5em;
+    padding: 8px
+}
+.card-body p {
+    margin: 0;
+}
+img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.card p {
+    color: var(--textCard);
+    font-weight: 500;
+}
+
 #contact {
     clear: both;
     margin: 0 auto;
     width: 100%;
 }
 #contact.section {
+    padding-top: 1px;
     display: block;
     width: 50%;
     margin: 10px auto 50px auto;
 }
 form {
+    margin-top: 20px;
+    margin-bottom: 16px;
     display: block;
     width: 100%;
+    padding-top: 1px;
 }
 
 /* Modified code example from https://dev.to/adrianbdesigns/let-s-create-a-floating-label-input-with-html-and-css-only-4mo8 */
 .floating {
     margin: auto auto 2rem auto;
-    /* background-color: #f5f5f5; */
+    background-color: #ffffff; 
     transition: background-color 0.2s ease;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     width: fit-content;
-}
-.floating:hover,
-.floating:focus-within {
-    background-color: #e9e9e9;
 }
 .floating_input {
     padding: 1.8rem 1rem 0.6rem;
@@ -107,10 +180,14 @@ form {
     border: 0;
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.8);
     transition: border-color 0.2s ease;
-    caret-color: darkgreen;
+    caret-color: var(--sectHeadColor);
     width: 20em;
 }
-.floating:hover .floating__input {
+.floating_input:hover,
+.floating_input:focus-within {
+    background-color: #f0eeee;
+}
+.floating:hover .floating_input {
     border-color: rgba(0, 0, 0, 0.62);
 }
 .floating_input::placeholder {
@@ -172,6 +249,8 @@ input[type="submit"] {
     margin-right: auto;
     border-style: solid;
     border-color: transparent;
+    background-color: #d4ce46;
+    box-shadow: 0 4px 8px 0 var(--boxShadow);
 }
 input[type="submit"]:hover {
     width: 20em;
@@ -179,8 +258,9 @@ input[type="submit"]:hover {
     padding: 16px;
     margin-left: auto;
     margin-right: auto;
-    border-color: darkgreen;
-
+    border-color: var(--sectHeadColor);
+    background-color: #cdc644;
+    box-shadow: 0 8px 16px 0 var(--boxShadow);
 }
 /*
 form label[for="fname"] {
@@ -201,55 +281,8 @@ form input[id="lname"] {
 }
 */
 
-.left, .middle, .right {
-    max-width: 300px;
-    margin: auto;
-    width: 100%;
-}
-.left {
-    grid-column: 1;
-}
-.middle {
-    grid-column: 2;
-}
-.right {
-    grid-column: 3;
-}
-.card {
-    background-color: #212930;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    height: 90%;
-    margin: 20px 16px;
-    padding: 0;
-    text-align: left;
-    width: 90%;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-.card figure {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-.card-body {
-    height: 12.5em;
-    padding: 8px
-}
-.card-body p {
-    margin: 0;
-}
-
-img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-
 footer {
-    background-color: #002244;
+    background-color: var(--hFColor);
     clear: both;
     color: white;
     display: block;
